@@ -2,16 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-/*
+
 public class EndLevel : MonoBehaviour
 {
 	public string nextScene;
-	private GameObject[] listOfBoxes = GameObject.FindGameObjectsWithTag("Box");
 
 	void OnCollisionEnter(Collision other){
-		if(listOfBoxes.Count == 0){
+		Debug.Log("You hit a box");
+		if(HowManyInList() == 1){
 			SceneManager.LoadScene(nextScene);
 		}
 	}
+
+	int HowManyInList(){
+		
+		GameObject[] listOfBoxes = GameObject.FindGameObjectsWithTag("Box");
+		int sum = 0;
+		foreach(GameObject i in listOfBoxes){
+			sum ++;
+		}
+		Debug.Log("There are this many boxes in the scene: " + sum);
+
+		return sum;
+	}
 }
-*/
+
