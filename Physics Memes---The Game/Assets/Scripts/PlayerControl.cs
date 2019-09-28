@@ -44,6 +44,8 @@ public class PlayerControl : MonoBehaviour {
         if (other.gameObject.name == "Respawn_Plane")
         {
             transform.position = startPos;
+            rb.velocity = new Vector3(0, 0, 0);
+            rb.angularVelocity = new Vector3(0,0,0);
         }
     }
 
