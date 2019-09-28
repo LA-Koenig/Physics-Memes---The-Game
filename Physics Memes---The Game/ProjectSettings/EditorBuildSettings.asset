@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Laurel's scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Game scenes/Between Levels 1.unity
+    guid: 973125771e1af3fa6a8041854c87f362
   m_configObjects: {}

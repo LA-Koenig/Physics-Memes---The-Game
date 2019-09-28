@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 5073407954786943213}
   - component: {fileID: 5062264015979542439}
   - component: {fileID: 5080251876123980450}
-  - component: {fileID: 785415198722578908}
   m_Layer: 0
   m_Name: CarboardBox_1(Physics) (1)
   m_TagString: Box
@@ -125,15 +124,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   liveCat: {fileID: 6647793865065274078, guid: 09eca09d845f1e8fe8a0fce54546b288, type: 3}
   deadCat: {fileID: 5957849416692795680, guid: a22e24fbd6a196ec68f8d3b01fc30ab6, type: 3}
---- !u!114 &785415198722578908
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5081347466516590865}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3758d5e94e895c3d78f00af2910be1e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
