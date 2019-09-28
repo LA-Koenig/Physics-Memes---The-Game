@@ -10,51 +10,62 @@ public class PlayerControl : MonoBehaviour {
     private Rigidbody rb;
     public bool isGrounded;
     public float jumpForce = 5.0f;
-
     public float fScale = 2.00f;  // How far is cow launched? 
+    public bool canControl;
+
 
     void Start ()
     {
         rb = GetComponent<Rigidbody>();
         jump = new Vector3(0.0f, 2.0f, 0.0f);
-        startPos = transform.position;    
+        startPos = transform.position;
+        canControl = true;
+
     }
 
-    void OnCollisionStay()
+    void OnCollisionEnter()
     {
         isGrounded = true;
     }
 
     void FixedUpdate ()
     {
-        float moveHorizontal = Input.GetAxis ("Horizontal");
-        float moveVertical = Input.GetAxis ("Vertical");
-        Vector3 movement = new Vector3 (moveHorizontal, 0.0f, moveVertical);
-        rb.AddForce (movement * speed);
 
-        if(Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if (canControl){
+            float moveHorizontal = Input.GetAxis("Horizontal");
+            float moveVertical = Input.GetAxis("Vertical");
+            Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
+            rb.AddForce(movement * speed);
+        }
+
+
+        // If Cow falls below map
+        if ( transform.position.y < -3)
+        {
+            transform.position = startPos;
+            rb.velocity = new Vector3(0, 0, 0);
+            rb.angularVelocity = new Vector3(0, 0, 0);
+        }
+
+        // If cow jumps
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             rb.AddForce(jump * jumpForce, ForceMode.Impulse);
             isGrounded = false;
         }
+
     }
 
-    public void launch(Vector3 force)
+    public void noControl()
     {
-        print("Launch!");
-        rb.AddForce(force * fScale, ForceMode.Impulse);
+        Debug.Log("Calling no control");
+        canControl = false;
     }
 
-    void OnCollisionEnter(Collision other)
+    public void launch(Vector3 vIn)
     {
-
-        // If you touch the respawn plane under the map.  reset position
-        if (other.gameObject.name == "Respawn_Plane")
-        {
-            transform.position = startPos;
-            rb.velocity = new Vector3(0, 0, 0);
-            rb.angularVelocity = new Vector3(0,0,0);
-        }
+        ;
     }
+
 
 }
