@@ -26,7 +26,7 @@ public class PlayerControl : MonoBehaviour {
         jump = new Vector3(0.0f, 10.0f, 0.0f);
         canControl = true;
         inSpace = false;
-        spaceSpeed = 1;
+        spaceSpeed = 10.0f;
     }
 
     void OnCollisionStay()
@@ -37,7 +37,7 @@ public class PlayerControl : MonoBehaviour {
     void FixedUpdate ()
     {
         //controls movement on ground
-        if (canControl && ! inSpace){
+        if (canControl && !inSpace){
             float moveHorizontal = Input.GetAxis("Horizontal");
             float moveVertical = Input.GetAxis("Vertical");
             Vector3 movement = new Vector3(moveHorizontal, 0.0f, 0.0f);
@@ -74,6 +74,12 @@ public class PlayerControl : MonoBehaviour {
     {
         Debug.Log("Calling no control");
         canControl = false;
+    }
+
+    public void setSpace()
+    {
+        Debug.Log("Telling cow it's in space.");
+        inSpace = true;
     }
 
 }
