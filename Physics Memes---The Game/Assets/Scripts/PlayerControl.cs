@@ -9,7 +9,7 @@ public class PlayerControl : MonoBehaviour {
     public Vector3 jump;
     private Rigidbody rb;
     public bool isGrounded;
-    public float jumpForce = 2.0f;
+    public float jumpForce = 5.0f;
 
     void Start ()
     {
