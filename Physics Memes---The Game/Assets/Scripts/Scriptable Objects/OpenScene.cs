@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-[CreateAssetMenu(fileName = "Data", menuName = "Inventory/List", order = 1)]
+[CreateAssetMenu(menuName = "SceneController/NewScene")]
 //[MenuItem("Assets/Create/My Scriptable Object/OpenScene")]
 public class OpenScene : ScriptableObject
 {
