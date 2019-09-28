@@ -537,7 +537,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 5d5b3bd8edad870c58862f5635d82d90, type: 2}
+      - m_Target: {fileID: 11400000, guid: 4fe187587e5d40e388e7814e59fd2709, type: 2}
         m_MethodName: NextScene
         m_Mode: 1
         m_Arguments:
