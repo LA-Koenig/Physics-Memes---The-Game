@@ -23,7 +23,7 @@ public class PlayerControl : MonoBehaviour {
 
     }
 
-    void OnCollisionEnter()
+    void OnCollisionStay()
     {
         isGrounded = true;
     }
