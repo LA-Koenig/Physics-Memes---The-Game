@@ -36,13 +36,4 @@ public class PlayerControl : MonoBehaviour {
         }
     }
 
-    void OnCollisionEnter ( Collision col)
-    {
-        if(col.gameObject.name == "b1")
-        {
-            Destroy(col.gameObject);
-        }
-    }
-
-
 }
