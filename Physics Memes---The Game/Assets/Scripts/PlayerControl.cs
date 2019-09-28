@@ -5,22 +5,28 @@ using System.Collections;
 
 public class PlayerControl : MonoBehaviour {
 
+    public Vector3 startPos;
     public float speed;
-    public Vector3 jump, startPos;
+    public Vector3 jump;
     private Rigidbody rb;
     public bool isGrounded;
-    public float jumpForce = 5.0f;
-    public float fScale = 2.00f;  // How far is cow launched? 
+
+    public bool inSpace;
+    public float spaceSpeed;
     public bool canControl;
 
 
     void Start ()
     {
         rb = GetComponent<Rigidbody>();
-        jump = new Vector3(0.0f, 2.0f, 0.0f);
         startPos = transform.position;
-        canControl = true;
 
+        // Default
+        speed = 5.0f;
+        jump = new Vector3(0.0f, 10.0f, 0.0f);
+        canControl = true;
+        inSpace = false;
+        spaceSpeed = 1;
     }
 
     void OnCollisionStay()
@@ -30,28 +36,36 @@ public class PlayerControl : MonoBehaviour {
 
     void FixedUpdate ()
     {
-
-        if (canControl){
+        //controls movement on ground
+        if (canControl && ! inSpace){
             float moveHorizontal = Input.GetAxis("Horizontal");
             float moveVertical = Input.GetAxis("Vertical");
-            Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
+            Vector3 movement = new Vector3(moveHorizontal, 0.0f, 0.0f);
             rb.AddForce(movement * speed);
         }
 
+        // If cow jumps
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded && !inSpace)
+        {
+            rb.AddForce(jump, ForceMode.Impulse);
+            isGrounded = false;
+        }
+
+        // Controls in space
+        if (inSpace)
+        {
+            float moveHorizontal = Input.GetAxis("Horizontal");
+            float moveVertical = Input.GetAxis("Vertical");
+            Vector3 movement = new Vector3(moveHorizontal, moveVertical, 0.0f);
+            rb.AddForce(movement * spaceSpeed);
+        }
 
         // If Cow falls below map
-        if ( transform.position.y < -3)
+        if (transform.position.y < -3)
         {
             transform.position = startPos;
             rb.velocity = new Vector3(0, 0, 0);
             rb.angularVelocity = new Vector3(0, 0, 0);
-        }
-
-        // If cow jumps
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
-        {
-            rb.AddForce(jump * jumpForce, ForceMode.Impulse);
-            isGrounded = false;
         }
 
     }
@@ -61,11 +75,5 @@ public class PlayerControl : MonoBehaviour {
         Debug.Log("Calling no control");
         canControl = false;
     }
-
-    public void launch(Vector3 vIn)
-    {
-        ;
-    }
-
 
 }

@@ -328,7 +328,7 @@ GameObject:
   - component: {fileID: 2167319572866090307}
   - component: {fileID: 2167319572866090306}
   m_Layer: 0
-  m_Name: Small_Cannon 1
+  m_Name: Cow Cannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -458,7 +458,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f11309dfd5f79944cbd8b096c1827393, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trajPointPrefab: {fileID: 883773070639333023, guid: 06401dc61a303d541b6e4a562cd6946d,
+  trajPointPrefab: {fileID: 7807481928743777845, guid: 21948431e24cabb49a0f2887900f62cd,
     type: 3}
   throwPower: 1
   nPoints: 10

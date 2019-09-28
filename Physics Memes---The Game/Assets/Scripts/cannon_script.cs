@@ -24,8 +24,8 @@ public class cannon_script : MonoBehaviour
         playerRb = playerObj.GetComponent<Rigidbody>();
         pC = (PlayerControl)playerObj.GetComponent(typeof(PlayerControl));
 
-        nPoints = 25;
-        throwPower = 5.0f;
+        nPoints = 45;
+        throwPower = 2.0f;
 
         trajPoints = new List<GameObject>();
         for (int i = 0; i < nPoints; i++)
@@ -42,7 +42,7 @@ public class cannon_script : MonoBehaviour
     {
         if (isHeld && Input.GetMouseButton(0))
         {
-            Vector3 vel = GetForceFrom(playerObj.transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition));
+            Vector3 vel = GetForceFrom(Camera.main.ScreenToWorldPoint(playerObj.transform.position), Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, playerObj.transform.position.z)));
             float angle = Mathf.Atan2(vel.y, vel.x) * Mathf.Rad2Deg;
             //transform.eulerAngles = new Vector3(0, 0, angle);
             setTrajectoryPoints(playerObj.transform.position, vel / playerRb.mass);
@@ -79,7 +79,12 @@ public class cannon_script : MonoBehaviour
     //---------------------------------------	
     private void throwCow()
     {
-        Vector3 force = GetForceFrom(playerObj.transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition));
+        Vector3 mPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, playerObj.transform.position.z);
+        Vector3 cPos = Camera.main.ScreenToWorldPoint(mPos);
+        Debug.Log(mPos);
+        Debug.Log(cPos);
+      
+        Vector3 force = GetForceFrom(Camera.main.ScreenToWorldPoint(playerObj.transform.position), cPos );
         playerRb.AddForce(force, ForceMode.Impulse);
     }
 
