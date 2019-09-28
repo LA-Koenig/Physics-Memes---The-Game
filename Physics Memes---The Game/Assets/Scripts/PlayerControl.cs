@@ -20,7 +20,7 @@ public class PlayerControl : MonoBehaviour {
         startPos = transform.position;    
     }
 
-    void OnCollisionStay()
+    void OnCollisionStay() //double jump (for single comment out this and add in the line in OnCollisionEnter
     {
         isGrounded = true;
     }
@@ -47,7 +47,7 @@ public class PlayerControl : MonoBehaviour {
 
     void OnCollisionEnter(Collision other)
     {
-
+	//isGrounded = true; //If you wanted single jump instead of double
         // If you touch the respawn plane under the map.  reset position
         if (other.gameObject.name == "Respawn_Plane")
         {
