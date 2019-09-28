@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5080251876123980450}
   m_Layer: 0
   m_Name: CarboardBox_1(Physics) (1)
-  m_TagString: Untagged
+  m_TagString: Box
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,4 +124,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   liveCat: {fileID: 6647793865065274078, guid: 09eca09d845f1e8fe8a0fce54546b288, type: 3}
   deadCat: {fileID: 5957849416692795680, guid: a22e24fbd6a196ec68f8d3b01fc30ab6, type: 3}
-  angleDegrees: 90
