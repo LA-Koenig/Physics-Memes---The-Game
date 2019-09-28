@@ -7,9 +7,8 @@ public class EndLevel : MonoBehaviour
 {
 	public string nextScene;
 
-	void OnCollisionEnter(Collision other){
-		Debug.Log("You hit a box");
-		if(HowManyInList() == 1){
+	void Update(){
+		if(HowManyInList() == 0){
 			SceneManager.LoadScene(nextScene);
 		}
 	}
@@ -21,6 +20,7 @@ public class EndLevel : MonoBehaviour
 		foreach(GameObject i in listOfBoxes){
 			sum ++;
 		}
+
 		Debug.Log("There are this many boxes in the scene: " + sum);
 
 		return sum;
