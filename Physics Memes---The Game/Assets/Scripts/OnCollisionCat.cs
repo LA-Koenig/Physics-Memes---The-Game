@@ -22,6 +22,7 @@ public class OnCollisionCat : MonoBehaviour
            {
                     Destroy (gameObject);
                     //or gameObject.SetActive(false);
+
            }
 	}
 }
