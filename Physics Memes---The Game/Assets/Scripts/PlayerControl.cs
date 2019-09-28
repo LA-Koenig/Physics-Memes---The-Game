@@ -6,7 +6,7 @@ using System.Collections;
 public class PlayerControl : MonoBehaviour {
 
     public float speed;
-    public Vector3 jump;
+    public Vector3 jump, startPos;
     private Rigidbody rb;
     public bool isGrounded;
     public float jumpForce = 5.0f;
@@ -14,7 +14,8 @@ public class PlayerControl : MonoBehaviour {
     void Start ()
     {
         rb = GetComponent<Rigidbody>();
-        jump = new Vector3(0.0f, 2.0f, 0.0f);        
+        jump = new Vector3(0.0f, 2.0f, 0.0f);
+        startPos = transform.position;    
     }
 
     void OnCollisionStay()
@@ -36,11 +37,13 @@ public class PlayerControl : MonoBehaviour {
         }
     }
 
-    void OnCollisionEnter ( Collision col)
+    void OnCollisionEnter(Collision other)
     {
-        if(col.gameObject.name == "b1")
+
+        // If you touch the respawn plane under the map.  reset position
+        if (other.gameObject.name == "Respawn_Plane")
         {
-            Destroy(col.gameObject);
+            transform.position = startPos;
         }
     }
 
