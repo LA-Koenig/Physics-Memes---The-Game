@@ -11,6 +11,8 @@ public class PlayerControl : MonoBehaviour {
     public bool isGrounded;
     public float jumpForce = 5.0f;
 
+    public float fScale = 2.00f;  // How far is cow launched? 
+
     void Start ()
     {
         rb = GetComponent<Rigidbody>();
@@ -37,6 +39,12 @@ public class PlayerControl : MonoBehaviour {
         }
     }
 
+    public void launch(Vector3 force)
+    {
+        print("Launch!");
+        rb.AddForce(force * fScale, ForceMode.Impulse);
+    }
+
     void OnCollisionEnter(Collision other)
     {
 
@@ -48,6 +56,7 @@ public class PlayerControl : MonoBehaviour {
             rb.angularVelocity = new Vector3(0,0,0);
         }
     }
+
 
 
 }
