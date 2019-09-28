@@ -7,11 +7,14 @@ public class PlayerControl : MonoBehaviour {
 
     public float speed;
     public Vector3 jump, startPos;
-    private Rigidbody rb;
     public bool isGrounded;
     public float jumpForce = 5.0f;
 
     public float fScale = 2.00f;  // How far is cow launched? 
+
+	public Joystick js;
+
+	private Rigidbody rb;
 
     void Start ()
     {
@@ -27,8 +30,8 @@ public class PlayerControl : MonoBehaviour {
 
     void FixedUpdate ()
     {
-        float moveHorizontal = Input.GetAxis ("Horizontal");
-        float moveVertical = Input.GetAxis ("Vertical");
+        float moveHorizontal = js.Horizontal;
+        float moveVertical = js.Vertical;
         Vector3 movement = new Vector3 (moveHorizontal, 0.0f, moveVertical);
         rb.AddForce (movement * speed);
 
