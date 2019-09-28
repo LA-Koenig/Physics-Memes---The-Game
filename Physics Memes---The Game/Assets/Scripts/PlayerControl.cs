@@ -29,7 +29,7 @@ public class PlayerControl : MonoBehaviour {
         spaceSpeed = 10.0f;
     }
 
-    void OnCollisionStay()
+    void OnCollisionStay() //double jump (for single comment out this and add in the line in OnCollisionEnter
     {
         isGrounded = true;
     }
@@ -62,6 +62,7 @@ public class PlayerControl : MonoBehaviour {
 
         // If Cow falls below map
         if (transform.position.y < -3)
+
         {
             transform.position = startPos;
             rb.velocity = new Vector3(0, 0, 0);
