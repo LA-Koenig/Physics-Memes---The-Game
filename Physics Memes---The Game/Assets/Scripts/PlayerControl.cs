@@ -123,7 +123,7 @@ public class PlayerControl : MonoBehaviour {
 
     public void setSpace()
     {
-        Debug.Log("Telling cow it's in space.");
+        //Debug.Log("Telling cow it's in space.");
         inSpace = true;
     }
 

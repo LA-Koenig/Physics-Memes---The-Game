@@ -4,40 +4,49 @@ using UnityEngine;
 
 public class capacitorScript : MonoBehaviour
 {
-    public GameObject pObj;
-    public Vector3 pPos;
-    public Rigidbody pRb;
-    public PlayerControl pS;
-    public Vector3 startPos;
+    private GameObject pObj;
+    private Vector3 pPos;
+    private Rigidbody pRb;
+    private PlayerControl pS;
+    private Vector3 startPos;
 
-    private float chargeSrength;
+    public Material blueCow;
+    public Material redCow;
+
+    public float pCharge;
     
 
     // Start is called before the first frame update
     void Start()
     {
+        pObj = GameObject.Find("Player");
         pPos = pObj.transform.position;
         pRb = pObj.GetComponent<Rigidbody>();
         pS = (PlayerControl)pObj.GetComponent(typeof(PlayerControl));
         startPos = pObj.transform.position;
         pS.setSpace();
+        pCharge = 5.0f;
+        pObj.GetComponentInChildren<Renderer>().material.SetColor("_Color", Color.red);
+
     }
 
     // Update is called once per frame
     void Update()
     {
         pS.setSpace();
-        pPos = pObj.transform.position;
 
-        Debug.Log(pPos);
-        // If Cow falls below map
-        if (pObj.transform.position.y < -3)
-
+        foreach (Touch touch in Input.touches)
         {
-            pObj.transform.position = startPos;
-            pRb.velocity = new Vector3(0, 0, 0);
-            pRb.angularVelocity = new Vector3(0, 0, 0);
-        }
+            if (touch.phase == TouchPhase.Began)
+            {
+                pCharge = - pCharge;
 
+                if (pCharge > 0.0f)
+                    pObj.GetComponentInChildren<Renderer>().material.SetColor("_Color", Color.red);
+                else
+                    pObj.GetComponentInChildren<Renderer>().material.SetColor("_Color", Color.blue);
+            }
+
+        }
     }
 }

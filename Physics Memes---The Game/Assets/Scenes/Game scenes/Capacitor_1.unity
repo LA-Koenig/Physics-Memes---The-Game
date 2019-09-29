@@ -2186,6 +2186,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a03b08819f09a143b14da059c2b7fa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blueCow: {fileID: 2100000, guid: c664866037dd36640b26f4c5b24e5f94, type: 2}
+  redCow: {fileID: 2100000, guid: a153399ad4fd5094497e087c1e858bdf, type: 2}
   pCharge: 0
 --- !u!1 &1489364357
 GameObject:
