@@ -35,6 +35,7 @@ public class PlayerControl : MonoBehaviour {
 
     void FixedUpdate ()
     {
+
         //controls movement on ground
         if (canControl && !inSpace){
 			float jHorizontal = js.Horizontal;
@@ -49,6 +50,7 @@ public class PlayerControl : MonoBehaviour {
 			}            
             rb.AddForce(movement * speed);
         }
+
 
         // If cow jumps
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded && !inSpace)
