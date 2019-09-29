@@ -4,10 +4,8 @@ using UnityEngine;
 using System.Collections;
 
 public class PlayerControl : MonoBehaviour {
-
-    public Vector3 startPos;
+    
     public float speed;
-    public Vector3 jump;
     private Rigidbody rb;
     public Vector3 jump, startPos;
     public bool isGrounded;
@@ -15,11 +13,7 @@ public class PlayerControl : MonoBehaviour {
     public bool inSpace;
     public float spaceSpeed;
     public bool canControl;
-
-
 	public Joystick js;
-
-	private Rigidbody rb;
 
     void Start ()
     {
@@ -46,7 +40,7 @@ public class PlayerControl : MonoBehaviour {
 			float jHorizontal = js.Horizontal;
             float moveHorizontal = Input.GetAxis("Horizontal");
 			Vector3 movement = new Vector3(0,0,0);
-			if (jHorizontal >= moveHorizontal)
+			if (Mathf.Abs(jHorizontal) >= Mathf.Abs(moveHorizontal))
 			{
 				movement.x = jHorizontal;
 			}
@@ -63,14 +57,14 @@ public class PlayerControl : MonoBehaviour {
             isGrounded = false;
         }
 		
-		foreach(Touch touch in Input.touches && ! inSpace){	
-				if((touch.phase == TouchPhase.Began) && isGrounded)
+		foreach(Touch touch in Input.touches ){	
+				if((touch.phase == TouchPhase.Began) && isGrounded && ! inSpace)
 				{
-						rb.AddForce(jump * jumpForce, ForceMode.Impulse);
+						rb.AddForce(jump , ForceMode.Impulse);
 						isGrounded = false;
 				 }
-		}
-    }
+		
+        }
 
         // Controls in space
         if (inSpace)
@@ -81,15 +75,23 @@ public class PlayerControl : MonoBehaviour {
             float moveVertical = Input.GetAxis("Vertical");
 			
 			Vector3 movement = new Vector3( 0, 0, 0 );
-			if (jHorizontal >= moveHorizontal)
+			if ( Mathf.Abs(jHorizontal) >= Mathf.Abs(moveHorizontal))
 			{
 				movement.x = jHorizontal;
 			}
 			else {
-				movement.x = new Vector3(moveHorizontal, 0.0f, 0.0f);
+				movement.x = moveHorizontal;
 			}
-			
-            Vector3 movement = new Vector3(moveHorizontal, moveVertical, 0.0f);
+            
+            if (Mathf.Abs(jVertical) >= Mathf.Abs(moveVertical))
+            {
+                movement.y = jVertical;
+            }
+            else
+            {
+                movement.y = moveVertical;
+            }
+
             rb.AddForce(movement * spaceSpeed);
         }
 
