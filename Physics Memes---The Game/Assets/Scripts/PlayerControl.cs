@@ -4,23 +4,28 @@ using UnityEngine;
 using System.Collections;
 
 public class PlayerControl : MonoBehaviour {
-
+    
     public float speed;
+    private Rigidbody rb;
     public Vector3 jump, startPos;
     public bool isGrounded;
-    public float jumpForce = 5.0f;
 
-    public float fScale = 2.00f;  // How far is cow launched? 
-
+    public bool inSpace;
+    public float spaceSpeed;
+    public bool canControl;
 	public Joystick js;
-	List<Touch> mightHaveToJump = new List<Touch>();
-	private Rigidbody rb;
 
     void Start ()
     {
         rb = GetComponent<Rigidbody>();
-        jump = new Vector3(0.0f, 2.0f, 0.0f);
-        startPos = transform.position;    
+        startPos = transform.position;
+
+        // Default
+        speed = 5.0f;
+        jump = new Vector3(0.0f, 10.0f, 0.0f);
+        canControl = true;
+        inSpace = false;
+        spaceSpeed = 10.0f;
     }
 
     void OnCollisionStay() //double jump (for single comment out this and add in the line in OnCollisionEnter
@@ -30,60 +35,89 @@ public class PlayerControl : MonoBehaviour {
 
     void FixedUpdate ()
     {
-        float moveHorizontal = js.Horizontal;
-        float moveVertical = js.Vertical;
-        Vector3 movement = new Vector3 (moveHorizontal, 0.0f, moveVertical);
-        rb.AddForce (movement * speed);
 
-	/*
-	foreach(Touch touch in Input.touches){
-		if (touch.position.x < Screen.width/2)
-             {
-                 Debug.Log ("Left click");
-             }
-             else if (touch.position.x > Screen.width/2)
-             {
-                 Debug.Log ("Right click");
-             }
-	}
-	
-	foreach(Touch touch in Input.touches){	
-        	if(touch.phase == TouchPhase.Began)
-        	{
-			mightHaveToJump.Add(touch);
-       		 }
-		else if(touch.phase == TouchPhase.Moved || touch.phase == TouchPhase.Stationary){
-			mightHaveToJump.Remove(touch);
-		}
-	}
-	foreach(Touch touch in mightHaveToJump){
-		//if(touch.phase == TouchPhase.Ended){
-			//mightHaveToJump.Remove(touch);
-			if(isGrounded){
-            			rb.AddForce(jump * jumpForce, ForceMode.Impulse);
-            			isGrounded = false;
+        //controls movement on ground
+        if (canControl && !inSpace){
+			float jHorizontal = js.Horizontal;
+            float moveHorizontal = Input.GetAxis("Horizontal");
+			Vector3 movement = new Vector3(0,0,0);
+			if (Mathf.Abs(jHorizontal) >= Mathf.Abs(moveHorizontal))
+			{
+				movement.x = jHorizontal;
 			}
-		//}
-	}
-	*/
-    }
+			else {
+				movement.x = moveHorizontal;
+			}            
+            rb.AddForce(movement * speed);
+        }
 
-    public void launch(Vector3 force)
-    {
-        print("Launch!");
-        rb.AddForce(force * fScale, ForceMode.Impulse);
-    }
 
-    void OnCollisionEnter(Collision other)
-    {
-	//isGrounded = true; //If you wanted single jump instead of double
-        // If you touch the respawn plane under the map.  reset position
-        if (other.gameObject.name == "Respawn_Plane")
+        // If cow jumps
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded && !inSpace)
+        {
+            rb.AddForce(jump, ForceMode.Impulse);
+            isGrounded = false;
+        }
+		
+		foreach(Touch touch in Input.touches ){	
+				if((touch.phase == TouchPhase.Began) && isGrounded && ! inSpace)
+				{
+						rb.AddForce(jump , ForceMode.Impulse);
+						isGrounded = false;
+				 }
+		
+        }
+
+        // Controls in space
+        if (inSpace)
+        {			
+			float jHorizontal = js.Horizontal;
+			float jVertical = js.Vertical;
+            float moveHorizontal = Input.GetAxis("Horizontal");
+            float moveVertical = Input.GetAxis("Vertical");
+			
+			Vector3 movement = new Vector3( 0, 0, 0 );
+			if ( Mathf.Abs(jHorizontal) >= Mathf.Abs(moveHorizontal))
+			{
+				movement.x = jHorizontal;
+			}
+			else {
+				movement.x = moveHorizontal;
+			}
+            
+            if (Mathf.Abs(jVertical) >= Mathf.Abs(moveVertical))
+            {
+                movement.y = jVertical;
+            }
+            else
+            {
+                movement.y = moveVertical;
+            }
+
+            rb.AddForce(movement * spaceSpeed);
+        }
+
+        // If Cow falls below map
+        if (transform.position.y < -3)
+
         {
             transform.position = startPos;
             rb.velocity = new Vector3(0, 0, 0);
-            rb.angularVelocity = new Vector3(0,0,0);
+            rb.angularVelocity = new Vector3(0, 0, 0);
         }
+
+    }
+
+    public void noControl()
+    {
+        Debug.Log("Calling no control");
+        canControl = false;
+    }
+
+    public void setSpace()
+    {
+        Debug.Log("Telling cow it's in space.");
+        inSpace = true;
     }
 
 }
