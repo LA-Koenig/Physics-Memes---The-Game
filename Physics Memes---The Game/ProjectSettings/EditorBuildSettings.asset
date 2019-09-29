@@ -26,10 +26,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game scenes/Space_1.unity
     guid: 547d1ec5049527041a433cd7a7dbfbca
-  - enabled: 0
-    path: Assets/Scenes/Matt's scenes/Orbit_2_Working.unity
-    guid: 1cc8555891ca9834683d2852371e8954
   - enabled: 1
     path: Assets/Scenes/Game scenes/Between Levels 3.unity
     guid: a8d3529f06e901b95a26ce7b5135d6cc
+  - enabled: 1
+    path: Assets/Scenes/Game scenes/Space_2.unity
+    guid: d1c20bce497daf64b8f1b78bce7219ee
+  - enabled: 1
+    path: Assets/Scenes/Game scenes/Between Levels 4.unity
+    guid: 1be79b34ad494189180c0cea43fe01a4
   m_configObjects: {}

@@ -188,7 +188,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: How are you going to deal with [insert physics gimmick here]?
+  m_Text: I bet you can't get them all if they're orbiting you...
 --- !u!222 &189797395
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1016,11 +1016,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Now that you''ve hit some boxes and collapsed some wave functions you probably
-    think you know what''s going on.
-
-
-    Think Again'
+  m_Text: Well now you're just showing off.
 --- !u!222 &1564251096
 CanvasRenderer:
   m_ObjectHideFlags: 0

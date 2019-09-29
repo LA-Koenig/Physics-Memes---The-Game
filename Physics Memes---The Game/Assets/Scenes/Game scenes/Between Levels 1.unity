@@ -188,7 +188,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: How are you going to deal with [insert physics gimmick here]?
+  m_Text: 'But what happens if we shoot you out of a cannon?
+
+
+    By the way, watch out for the lava?'
 --- !u!222 &189797395
 CanvasRenderer:
   m_ObjectHideFlags: 0
