@@ -6,6 +6,7 @@ using System.Collections;
 public class CameraController : MonoBehaviour {
 
     public GameObject player;
+	public bool inSpace = false;
 
     private Vector3 offset;
     //public float aspectRatio;
@@ -54,7 +55,12 @@ public class CameraController : MonoBehaviour {
     }
 	*/
     void LateUpdate ()
-    {
-        transform.position = new Vector3( player.transform.position.x, transform.position.y, transform.position.z);
+    {	
+	if(!inSpace){
+        	transform.position = new Vector3( player.transform.position.x, transform.position.y, transform.position.z);
+	}
+	else{
+        	transform.position = new Vector3( player.transform.position.x, player.transform.position.y, transform.position.z);
+	}
     }
 }
