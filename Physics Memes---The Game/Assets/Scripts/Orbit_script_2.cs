@@ -73,7 +73,7 @@ public class Orbit_script_2 : MonoBehaviour
             {
                 Vector3 accel = new Vector3(playerObj.transform.position.x - box.transform.position.x, playerObj.transform.position.y - box.transform.position.y, 0.0f);
                 box.GetComponent<Rigidbody>().AddForce(accel * gravScale/(r*r));
-                
+                box.transform.position = new Vector3(box.transform.position.x, box.transform.position.y, playerObj.transform.position.z);
             }
 
         }
