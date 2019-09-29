@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game scenes/Between Levels 4.unity
     guid: 1be79b34ad494189180c0cea43fe01a4
+  - enabled: 1
+    path: Assets/Scenes/Game scenes/Capacitor_1.unity
+    guid: d42da94076928424e83740a6194ccd97
   m_configObjects: {}

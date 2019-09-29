@@ -9,6 +9,7 @@ public class cScript : MonoBehaviour
     public Rigidbody pRb;       // player RigidBody
     public Vector3 pPos;        // player Position
     public PlayerControl pC;    // player Controller Script
+    public CameraController cC;    // camera Controller Script
     public capacitorScript cS;    // Capacitor Script
 
     public Vector3 capPos;       // Capacitor Position
@@ -25,9 +26,11 @@ public class cScript : MonoBehaviour
         pObj = GameObject.Find("Player");
         pRb = pObj.GetComponent<Rigidbody>();
         pC = (PlayerControl)pObj.GetComponent(typeof(PlayerControl));
+        cC = (CameraController)GameObject.Find("Main Camera").GetComponent(typeof(CameraController));
         cS = (capacitorScript)GameObject.Find("Capacitor_Setup").GetComponent(typeof(capacitorScript));
 
-        eField = Random.Range(7.0f, 20.0f);
+        eField = Random.Range(7.0f, 16.0f);
+        cC.inSpace = true;
 
         capPos = transform.position;
         capScale = transform.localScale;
