@@ -5,19 +5,31 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Game scenes/Opening Menu.unity
     guid: caceac5e55969a1388eb68f590ae4cd4
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Game scenes/Story Menu.unity
     guid: 29fb7a56056a7c3c3a5cf59da795093d
   - enabled: 1
     path: Assets/Scenes/Game scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Game scenes/Between Levels 1.unity
     guid: 973125771e1af3fa6a8041854c87f362
+  - enabled: 1
+    path: Assets/Scenes/Game scenes/Cannon_1.unity
+    guid: 13913c9ab745eaa40ac55700192af0d7
+  - enabled: 1
+    path: Assets/Scenes/Game scenes/Between Levels 2.unity
+    guid: e49e872b3affc43f4b3edea32d1c0d2c
+  - enabled: 1
+    path: Assets/Scenes/Game scenes/Space_1.unity
+    guid: 547d1ec5049527041a433cd7a7dbfbca
   - enabled: 0
     path: Assets/Scenes/Matt's scenes/Orbit_2_Working.unity
     guid: 1cc8555891ca9834683d2852371e8954
+  - enabled: 1
+    path: Assets/Scenes/Game scenes/Between Levels 3.unity
+    guid: a8d3529f06e901b95a26ce7b5135d6cc
   m_configObjects: {}

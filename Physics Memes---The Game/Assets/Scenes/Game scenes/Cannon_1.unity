@@ -327,7 +327,6 @@ GameObject:
   m_Component:
   - component: {fileID: 773808565}
   - component: {fileID: 773808564}
-  - component: {fileID: 773808563}
   m_Layer: 0
   m_Name: Cannon Camera
   m_TagString: Untagged
@@ -335,14 +334,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &773808563
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 773808562}
-  m_Enabled: 1
 --- !u!20 &773808564
 Camera:
   m_ObjectHideFlags: 0
@@ -514,7 +505,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 15, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 10.2}
+  m_AnchoredPosition: {x: 15, y: 10.2}
   m_SizeDelta: {x: 100, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1060717363
@@ -1185,6 +1176,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Small_Cannon
       objectReference: {fileID: 0}
+    - target: {fileID: 2167319572866090306, guid: 64cb631152c5f0549ade1890caba26c4,
+        type: 3}
+      propertyPath: trajPointPrefab
+      value: 
+      objectReference: {fileID: 7807481928743777845, guid: 21948431e24cabb49a0f2887900f62cd,
+        type: 3}
     - target: {fileID: 2169648341116861310, guid: 64cb631152c5f0549ade1890caba26c4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1332,7 +1329,7 @@ PrefabInstance:
     - target: {fileID: 4930307522082818093, guid: 3136a89683e52a27b8157e07e2109444,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4930307522082818093, guid: 3136a89683e52a27b8157e07e2109444,
         type: 3}

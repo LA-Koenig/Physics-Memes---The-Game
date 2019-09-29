@@ -21,7 +21,7 @@ public class EndLevel : MonoBehaviour
 			sum ++;
 		}
 
-		//Debug.Log("There are this many boxes in the scene: " + sum);
+		Debug.Log("There are this many boxes in the scene: " + sum);
 
 		return sum;
 	}
