@@ -8,16 +8,16 @@ public class CameraController : MonoBehaviour {
     public GameObject player;
 
     private Vector3 offset;
-    public float aspectRatio;
-
+    //public float aspectRatio;
+	/*
     void Start ()
     {
         offset = transform.position - player.transform.position;
 
         // Beginning
-        aspectRatio = 3.0f / 2.0f;
-        float windowAspect = (float)Screen.width / (float)Screen.height;
-        float scaleheight = windowAspect / aspectRatio;
+        //aspectRatio = 3.0f / 2.0f;
+        //float windowAspect = (float)Screen.width / (float)Screen.height;
+        //float scaleheight = windowAspect / aspectRatio;
         Camera camera = GetComponent<Camera>();
 
         if (scaleheight < 1.0f)
@@ -49,12 +49,12 @@ public class CameraController : MonoBehaviour {
 
         /*        
         // if scaled height is less than current height, add letterbox
-         */
+         
 
     }
-
+	*/
     void LateUpdate ()
     {
-        transform.position = new Vector3( player.transform.position.x, player.transform.position.y, transform.position.z);
+        transform.position = new Vector3( player.transform.position.x, transform.position.y, transform.position.z);
     }
 }
