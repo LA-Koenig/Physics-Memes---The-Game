@@ -9,12 +9,17 @@ public class PlayerControl : MonoBehaviour {
     public float speed;
     public Vector3 jump;
     private Rigidbody rb;
+    public Vector3 jump, startPos;
     public bool isGrounded;
 
     public bool inSpace;
     public float spaceSpeed;
     public bool canControl;
 
+
+	public Joystick js;
+
+	private Rigidbody rb;
 
     void Start ()
     {
@@ -38,9 +43,16 @@ public class PlayerControl : MonoBehaviour {
     {
         //controls movement on ground
         if (canControl && !inSpace){
+			float jHorizontal = js.Horizontal;
             float moveHorizontal = Input.GetAxis("Horizontal");
-            float moveVertical = Input.GetAxis("Vertical");
-            Vector3 movement = new Vector3(moveHorizontal, 0.0f, 0.0f);
+			Vector3 movement = new Vector3(0,0,0);
+			if (jHorizontal >= moveHorizontal)
+			{
+				movement.x = jHorizontal;
+			}
+			else {
+				movement.x = moveHorizontal;
+			}            
             rb.AddForce(movement * speed);
         }
 
@@ -50,12 +62,33 @@ public class PlayerControl : MonoBehaviour {
             rb.AddForce(jump, ForceMode.Impulse);
             isGrounded = false;
         }
+		
+		foreach(Touch touch in Input.touches && ! inSpace){	
+				if((touch.phase == TouchPhase.Began) && isGrounded)
+				{
+						rb.AddForce(jump * jumpForce, ForceMode.Impulse);
+						isGrounded = false;
+				 }
+		}
+    }
 
         // Controls in space
         if (inSpace)
-        {
+        {			
+			float jHorizontal = js.Horizontal;
+			float jVertical = js.Vertical;
             float moveHorizontal = Input.GetAxis("Horizontal");
             float moveVertical = Input.GetAxis("Vertical");
+			
+			Vector3 movement = new Vector3( 0, 0, 0 );
+			if (jHorizontal >= moveHorizontal)
+			{
+				movement.x = jHorizontal;
+			}
+			else {
+				movement.x = new Vector3(moveHorizontal, 0.0f, 0.0f);
+			}
+			
             Vector3 movement = new Vector3(moveHorizontal, moveVertical, 0.0f);
             rb.AddForce(movement * spaceSpeed);
         }
