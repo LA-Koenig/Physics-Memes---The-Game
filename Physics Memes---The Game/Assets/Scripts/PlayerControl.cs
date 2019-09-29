@@ -13,7 +13,7 @@ public class PlayerControl : MonoBehaviour {
     public float fScale = 2.00f;  // How far is cow launched? 
 
 	public Joystick js;
-
+	List<Touch> mightHaveToJump = new List<Touch>();
 	private Rigidbody rb;
 
     void Start ()
@@ -35,11 +35,22 @@ public class PlayerControl : MonoBehaviour {
         Vector3 movement = new Vector3 (moveHorizontal, 0.0f, moveVertical);
         rb.AddForce (movement * speed);
 	foreach(Touch touch in Input.touches){	
-        	if((touch.phase == TouchPhase.Began) && isGrounded)
+        	if(touch.phase == TouchPhase.Began)
         	{
-            		rb.AddForce(jump * jumpForce, ForceMode.Impulse);
-            		isGrounded = false;
+			mightHaveToJump.Add(touch);
        		 }
+		else if(touch.phase == TouchPhase.Moved || touch.phase == TouchPhase.Stationary){
+			mightHaveToJump.Remove(touch);
+		}
+	}
+	foreach(Touch touch in mightHaveToJump){
+		//if(touch.phase == TouchPhase.Ended){
+			//mightHaveToJump.Remove(touch);
+			if(isGrounded){
+            			rb.AddForce(jump * jumpForce, ForceMode.Impulse);
+            			isGrounded = false;
+			}
+		//}
 	}
     }
 
