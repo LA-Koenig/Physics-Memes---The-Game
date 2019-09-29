@@ -337,6 +337,7 @@ MonoBehaviour:
   pRb: {fileID: 0}
   pPos: {x: 0, y: 0, z: 0}
   pC: {fileID: 0}
+  cC: {fileID: 0}
   cS: {fileID: 0}
   capPos: {x: 0, y: 0, z: 0}
   capScale: {x: 0, y: 0, z: 0}
@@ -1971,6 +1972,7 @@ MonoBehaviour:
   pRb: {fileID: 0}
   pPos: {x: 0, y: 0, z: 0}
   pC: {fileID: 0}
+  cC: {fileID: 0}
   cS: {fileID: 0}
   capPos: {x: 0, y: 0, z: 0}
   capScale: {x: 0, y: 0, z: 0}
@@ -3071,6 +3073,7 @@ MonoBehaviour:
   pRb: {fileID: 0}
   pPos: {x: 0, y: 0, z: 0}
   pC: {fileID: 0}
+  cC: {fileID: 0}
   cS: {fileID: 0}
   capPos: {x: 0, y: 0, z: 0}
   capScale: {x: 0, y: 0, z: 0}
@@ -3144,6 +3147,7 @@ MonoBehaviour:
   pRb: {fileID: 0}
   pPos: {x: 0, y: 0, z: 0}
   pC: {fileID: 0}
+  cC: {fileID: 0}
   cS: {fileID: 0}
   capPos: {x: 0, y: 0, z: 0}
   capScale: {x: 0, y: 0, z: 0}
@@ -3460,6 +3464,7 @@ MonoBehaviour:
   pRb: {fileID: 0}
   pPos: {x: 0, y: 0, z: 0}
   pC: {fileID: 0}
+  cC: {fileID: 0}
   cS: {fileID: 0}
   capPos: {x: 0, y: 0, z: 0}
   capScale: {x: 0, y: 0, z: 0}
@@ -3717,7 +3722,7 @@ PrefabInstance:
     - target: {fileID: 4930307522082818093, guid: 3136a89683e52a27b8157e07e2109444,
         type: 3}
       propertyPath: nextScene
-      value: Between Levels 5
+      value: Between Levels final
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3136a89683e52a27b8157e07e2109444, type: 3}
