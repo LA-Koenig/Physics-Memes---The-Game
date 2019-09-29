@@ -34,12 +34,13 @@ public class PlayerControl : MonoBehaviour {
         float moveVertical = js.Vertical;
         Vector3 movement = new Vector3 (moveHorizontal, 0.0f, moveVertical);
         rb.AddForce (movement * speed);
-
-        if(Input.GetKeyDown(KeyCode.Space) && isGrounded)
-        {
-            rb.AddForce(jump * jumpForce, ForceMode.Impulse);
-            isGrounded = false;
-        }
+	foreach(Touch touch in Input.touches){	
+        	if((touch.phase == TouchPhase.Began) && isGrounded)
+        	{
+            		rb.AddForce(jump * jumpForce, ForceMode.Impulse);
+            		isGrounded = false;
+       		 }
+	}
     }
 
     public void launch(Vector3 force)
