@@ -9,6 +9,7 @@ public class Orbit_script_2 : MonoBehaviour
     public List<GameObject> listBox;
     public Rigidbody playerRb;
     public PlayerControl pC;
+	public CameraController cc;
 
     public float r;
     public float angScale;
@@ -26,6 +27,7 @@ public class Orbit_script_2 : MonoBehaviour
 
         pC.inSpace = true;
         pC.setSpace();
+	cc.inSpace= true;
 
         r = 10.0f;
         angScale = 1.0f;
@@ -69,7 +71,7 @@ public class Orbit_script_2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        pC.setSpace();
+        //pC.setSpace();
 
         // Give boxes a gravitational attraction torwards the cow
         foreach (GameObject box in listBox)

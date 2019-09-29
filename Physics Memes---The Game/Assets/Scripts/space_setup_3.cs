@@ -9,6 +9,7 @@ public class space_setup_3 : MonoBehaviour
     private PlayerControl pC;
     private float angScale;
     private float velScale;
+	public CameraController cc;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,7 @@ public class space_setup_3 : MonoBehaviour
 
         pC.inSpace = true;
         pC.setSpace();
+	cc.inSpace = true;
 
         angScale = 1.0f;
         velScale = 2.5f;
@@ -33,10 +35,5 @@ public class space_setup_3 : MonoBehaviour
             i.GetComponent<Rigidbody>().velocity = new Vector3(Random.Range(-velScale, velScale), Random.Range(-velScale, velScale), Random.Range(-velScale, velScale));
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        pC.setSpace();
-    }
+    
 }

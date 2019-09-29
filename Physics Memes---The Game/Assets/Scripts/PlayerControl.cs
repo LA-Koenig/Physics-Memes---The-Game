@@ -10,7 +10,7 @@ public class PlayerControl : MonoBehaviour {
     public Vector3 jump, startPos;
     public bool isGrounded;
 
-    public bool inSpace;
+    public bool inSpace = false;
     public float spaceSpeed;
     public bool canControl;
 	public Joystick js;
@@ -24,7 +24,6 @@ public class PlayerControl : MonoBehaviour {
         speed = 5.0f;
         jump = new Vector3(0.0f, 10.0f, 0.0f);
         canControl = true;
-        inSpace = false;
         spaceSpeed = 10.0f;
     }
 
@@ -38,6 +37,7 @@ public class PlayerControl : MonoBehaviour {
 
     void FixedUpdate ()
     {
+	Debug.Log("in FixedUpdate. inSpace is " + inSpace);
 
         //controls movement on ground
         if (canControl && !inSpace){
