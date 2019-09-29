@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class space_setup_3 : MonoBehaviour
 {
-    public GameObject playerObj;
-    public Rigidbody playerRb;
-    public PlayerControl pC;
-    public float angScale;
-    public float velScale;
+    private GameObject playerObj;
+    private Rigidbody playerRb;
+    private PlayerControl pC;
+    private float angScale;
+    private float velScale;
 
     // Start is called before the first frame update
     void Start()
