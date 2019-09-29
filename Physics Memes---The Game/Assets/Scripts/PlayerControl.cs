@@ -34,6 +34,17 @@ public class PlayerControl : MonoBehaviour {
         float moveVertical = js.Vertical;
         Vector3 movement = new Vector3 (moveHorizontal, 0.0f, moveVertical);
         rb.AddForce (movement * speed);
+	foreach(Touch touch in Input.touches){
+		if (touch.position.x < Screen.width/2)
+             {
+                 Debug.Log ("Left click");
+             }
+             else if (touch.position.x > Screen.width/2)
+             {
+                 Debug.Log ("Right click");
+             }
+	}
+	/*
 	foreach(Touch touch in Input.touches){	
         	if(touch.phase == TouchPhase.Began)
         	{
@@ -52,6 +63,7 @@ public class PlayerControl : MonoBehaviour {
 			}
 		//}
 	}
+	*/
     }
 
     public void launch(Vector3 force)
