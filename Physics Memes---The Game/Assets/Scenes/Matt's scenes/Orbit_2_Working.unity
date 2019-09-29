@@ -678,10 +678,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerObj: {fileID: 0}
+  catObjPrefab: {fileID: 5081347466516590865, guid: 701ba75722e7dc9a88cc1e2172c4cba1,
+    type: 3}
+  listBox: []
   playerRb: {fileID: 0}
   pC: {fileID: 0}
+  r: 0
   angScale: 0
   velScale: 0
+  gravScale: 0
 --- !u!1001 &2077884972
 PrefabInstance:
   m_ObjectHideFlags: 0
