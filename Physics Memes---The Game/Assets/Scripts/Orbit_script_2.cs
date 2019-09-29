@@ -60,15 +60,6 @@ public class Orbit_script_2 : MonoBehaviour
         
     }
     
-    /*
-    void OnCollisionEnter(Collision other)
-    {
-        Debug.Log("Collision with!");
-        Debug.Log(other.gameObject.name);
-        int i = listBox.IndexOf(other.gameObject);
-        Debug.Log(i);
-    }
-    */
 
     // Update is called once per frame
     void Update()
