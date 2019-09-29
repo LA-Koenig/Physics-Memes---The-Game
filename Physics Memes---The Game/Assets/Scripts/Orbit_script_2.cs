@@ -34,23 +34,28 @@ public class Orbit_script_2 : MonoBehaviour
         // For perfect circular orbit I think. 
         gravScale = 75.0f;
 
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < 8; i++)
         {
             GameObject box = Instantiate(catObjPrefab);
+            box.transform.localScale = new Vector3( 1.8f, 1.8f, 1.8f);
             box.GetComponent<Rigidbody>().useGravity = false;
             box.GetComponent<Rigidbody>().angularVelocity = new Vector3(Random.Range(-angScale, angScale), Random.Range(-angScale, angScale), Random.Range(-angScale, angScale));
             box.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationZ;
             listBox.Insert(i, box);
         }
 
-        listBox[0].transform.position = new Vector3(pPos.x + r, pPos.y, 0);
+        listBox[0].transform.position = new Vector3(pPos.x + r, pPos.y + 0, 0);
         listBox[1].transform.position = new Vector3(pPos.x + 0, pPos.y + r, 0);
-        listBox[2].transform.position = new Vector3(pPos.x - r, pPos.y, 0);
+        listBox[2].transform.position = new Vector3(pPos.x - r, pPos.y + 0, 0);
         listBox[3].transform.position = new Vector3(pPos.x + 0, pPos.y - r, 0);
+        listBox[4].transform.position = new Vector3(pPos.x + r, pPos.y + r, 0);
+        listBox[5].transform.position = new Vector3(pPos.x - r, pPos.y + r, 0);
+        listBox[6].transform.position = new Vector3(pPos.x + r, pPos.y - r, 0);
+        listBox[7].transform.position = new Vector3(pPos.x - r, pPos.y - r, 0);
 
         // Apply random velocity rotation to boxes
 
-        
+
         foreach (GameObject box in listBox)
         {
             Vector3 dPos = new Vector3(- box.transform.position.y + playerObj.transform.position.y, box.transform.position.x - playerObj.transform.position.x , 0.0f );
