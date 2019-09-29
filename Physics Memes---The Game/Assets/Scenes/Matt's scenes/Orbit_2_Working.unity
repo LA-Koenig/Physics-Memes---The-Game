@@ -196,12 +196,12 @@ PrefabInstance:
     - target: {fileID: 5084506148962807389, guid: 701ba75722e7dc9a88cc1e2172c4cba1,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 10
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5084506148962807389, guid: 701ba75722e7dc9a88cc1e2172c4cba1,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 10
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5084506148962807389, guid: 701ba75722e7dc9a88cc1e2172c4cba1,
         type: 3}
@@ -610,12 +610,12 @@ PrefabInstance:
     - target: {fileID: 5084506148962807389, guid: 701ba75722e7dc9a88cc1e2172c4cba1,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 10
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5084506148962807389, guid: 701ba75722e7dc9a88cc1e2172c4cba1,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 10
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5084506148962807389, guid: 701ba75722e7dc9a88cc1e2172c4cba1,
         type: 3}
@@ -645,7 +645,7 @@ GameObject:
   - component: {fileID: 1486854115}
   - component: {fileID: 1486854116}
   m_Layer: 0
-  m_Name: Space_Scene
+  m_Name: Space_Scene_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -674,7 +674,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1486854114}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33e91050a9968e44d84e488e4fc3c878, type: 3}
+  m_Script: {fileID: 11500000, guid: b0cbcab333d44dd4283b2e0d152766c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerObj: {fileID: 0}
@@ -752,12 +752,12 @@ PrefabInstance:
     - target: {fileID: 5084506148962807389, guid: 701ba75722e7dc9a88cc1e2172c4cba1,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 10
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5084506148962807389, guid: 701ba75722e7dc9a88cc1e2172c4cba1,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 10
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5084506148962807389, guid: 701ba75722e7dc9a88cc1e2172c4cba1,
         type: 3}
@@ -925,7 +925,7 @@ PrefabInstance:
     - target: {fileID: 2409884850402633322, guid: 3136a89683e52a27b8157e07e2109444,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 2409884850402633322, guid: 3136a89683e52a27b8157e07e2109444,
         type: 3}

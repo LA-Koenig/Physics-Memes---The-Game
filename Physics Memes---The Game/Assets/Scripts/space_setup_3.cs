@@ -24,8 +24,7 @@ public class space_setup_3 : MonoBehaviour
         angScale = 1.0f;
         velScale = 2.5f;
 
-
-        // Apply random velocity / rotation to boxes
+         // Apply random velocity / rotation to boxes
 
         GameObject[] listOfBoxes = GameObject.FindGameObjectsWithTag("Box");
         foreach (GameObject i in listOfBoxes)
