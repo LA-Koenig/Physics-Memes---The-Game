@@ -188,8 +188,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Since you survived space why don't we see how you deal with everything being
-    a bit more electric.
+  m_Text: I suppose we're done here.
 --- !u!222 &189797395
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -569,7 +568,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1, y: -101}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 320, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &959913696
@@ -615,7 +614,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: a79735429b6eada1cbf6ab02199461e2, type: 2}
+      - m_Target: {fileID: 11400000, guid: 0bc1d1f54d6edee53ad1d6a37489eca2, type: 2}
         m_MethodName: NextScene
         m_Mode: 1
         m_Arguments:
@@ -1017,8 +1016,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "You somehow managed to get all my boxes even with them orbiting around
-    you. \n\nFine then."
+  m_Text: 'Hmph.
+
+
+    Well it seems like you''ve beaten all my ideal physics challenges.'
 --- !u!222 &1564251096
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -38,4 +38,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game scenes/Capacitor_1.unity
     guid: d42da94076928424e83740a6194ccd97
+<<<<<<< Updated upstream
+=======
+  - enabled: 1
+    path: Assets/Scenes/Game scenes/Between Levels 5.unity
+    guid: 58b9f968a26406c359a7b439f10ed1df
+>>>>>>> Stashed changes
   m_configObjects: {}
